@@ -2,115 +2,178 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Aalok Art Gallery | Sourabh Bhatt</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-font-family:Arial,sans-serif;
-background:#0d0d0d;
-color:white;
-line-height:1.6;
+font-family:Poppins,sans-serif;
+background:#F7F2EB;
+color:#222;
+line-height:1.7;
 }
+
 header{
-padding:18px 8%;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(247,242,235,.96);
+backdrop-filter:blur(10px);
+padding:16px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:#111;
-position:sticky;
-top:0;
+z-index:1000;
+border-bottom:1px solid #e6d7c2;
 }
+
 .logo{
-color:#d4af37;
-font-size:26px;
-font-weight:bold;
+font-family:Cinzel,serif;
+font-size:28px;
+color:#A56A2A;
+font-weight:700;
 }
+
 nav a{
-color:white;
-margin-left:22px;
+margin-left:24px;
 text-decoration:none;
+color:#333;
+font-weight:500;
 }
+
 .hero{
-padding:90px 8%;
-text-align:center;
-background:linear-gradient(135deg,#111,#1f1f1f);
+padding:130px 8% 90px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
 }
+
 .hero h1{
-font-size:54px;
-color:#d4af37;
-margin-bottom:15px;
+font-family:Cinzel,serif;
+font-size:52px;
+line-height:1.15;
+margin-bottom:18px;
 }
+
+.hero h1 span{color:#A56A2A}
+
 .hero p{
-max-width:800px;
-margin:auto;
-font-size:20px;
-color:#ddd;
+font-size:18px;
+color:#555;
+margin-bottom:28px;
 }
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
 .btn{
-display:inline-block;
-margin-top:30px;
-padding:15px 30px;
-background:#d4af37;
-color:black;
-font-weight:bold;
+padding:14px 24px;
+border-radius:10px;
 text-decoration:none;
-border-radius:40px;
-}
-.btn2{
+font-weight:600;
 display:inline-block;
-margin-top:18px;
-padding:13px 28px;
-border:2px solid #d4af37;
-color:#d4af37;
-text-decoration:none;
-border-radius:40px;
-margin-left:12px;
+transition:.3s;
 }
+
+.primary{
+background:#A56A2A;
+color:white;
+}
+
+.secondary{
+background:#25D366;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero img{
+width:100%;
+border-radius:22px;
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
 section{
 padding:80px 8%;
 }
+
 h2{
-color:#d4af37;
-font-size:36px;
-margin-bottom:25px;
+font-family:Cinzel,serif;
+font-size:38px;
+margin-bottom:18px;
+color:#222;
 }
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:22px;
-}
-.card{
-background:#171717;
-padding:25px;
-border-radius:18px;
-}
-.gallery{
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
+gap:22px;
+margin-top:30px;
 }
-.gallery div{
-background:#222;
-height:230px;
-display:flex;
-align-items:center;
-justify-content:center;
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.gallery img{
+width:100%;
+height:240px;
+object-fit:cover;
 border-radius:16px;
-color:#888;
 }
-.cta{
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+margin-top:35px;
+}
+
+.stat{
+background:white;
+padding:30px;
 text-align:center;
-background:#141414;
-border-radius:24px;
-padding:60px 30px;
+border-radius:18px;
 }
+
+.stat h3{
+font-size:38px;
+color:#A56A2A;
+}
+
+.dark{
+background:#1E1A17;
+color:white;
+}
+
+.dark h2{color:white}
+
 footer{
-padding:35px;
-text-align:center;
 background:#111;
-color:#888;
+color:white;
+padding:45px 8%;
+text-align:center;
+}
+
+@media(max-width:850px){
+.hero{
+grid-template-columns:1fr;
+padding-top:110px;
+}
+.hero h1{font-size:40px}
+nav{display:none}
 }
 </style>
 
@@ -118,30 +181,38 @@ color:#888;
 <body>
 
 <header>
+
 <div class="logo">Aalok Art Gallery</div>
+
 <nav>
 <a href="#about">About</a>
 <a href="#digital">Digital Art</a>
 <a href="#gallery">Gallery</a>
+<a href="#success">Success</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
 <section class="hero">
-<h1>India's Next-Gen Digital Art Mentor</h1>
 
-<p>
-Helping artists move beyond traditional methods and confidently create
-future-ready Digital Art.
-</p>
+<div>
 
-<a class="btn" href="https://academy.aalokartgallery.com/services/freewebinar" target="_blank">
-Join FREE Live Art Class
-</a>
+<h1>Discover the Future of Art with <span>Sourabh Bhatt</span></h1>
 
-<a class="btn2" href="#gallery">
-View Portfolio
-</a>
+<p>18+ years of Fine Arts Teaching • Next-Gen Digital Art Mentor • Founder & Director, Aalok Art Gallery</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="https://academy.aalokartgallery.com/services/freewebinar" target="_blank">Join FREE Art Class</a>
+
+<a class="btn secondary" href="https://wa.me/" target="_blank">Join WhatsApp Community</a>
+
+</div>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900" alt="Digital Art">
 
 </section>
 
@@ -149,80 +220,59 @@ View Portfolio
 
 <h2>About Sourabh Bhatt</h2>
 
-<p>
-Founder & Director of Aalok Art Gallery.
-With 18+ years of Fine Arts teaching experience and international exhibition recognition,
-my mission is to help the next generation of artists master Next-Gen Digital Art using
-modern creative tools while preserving artistic originality.
-</p>
+<p>I help students, artists and beginners confidently enter the world of Next-Gen Digital Art. My mission is to combine traditional artistic skills with modern AI and digital tools so every learner can create, grow and build a future-ready creative career.</p>
 
-<br>
+<div class="stats">
 
-<div class="cards">
-
-<div class="card">
-<h3>18+ Years</h3>
-<p>Fine Arts Teaching Experience</p>
+<div class="stat">
+<h3>18+</h3>
+<p>Years Teaching</p>
 </div>
 
-<div class="card">
-<h3>6+ Years</h3>
-<p>IGCSE & International Art Education</p>
+<div class="stat">
+<h3>2010</h3>
+<p>Sangam School</p>
 </div>
 
-<div class="card">
-<h3>Global Presence</h3>
-<p>London, Brazil & Denmark Exhibitions</p>
+<div class="stat">
+<h3>35+</h3>
+<p>Group Exhibitions</p>
 </div>
 
-<div class="card">
-<h3>Founder</h3>
-<p>Aalok Art Gallery</p>
+<div class="stat">
+<h3>2024</h3>
+<p>London Showcase</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="digital">
+<section class="dark" id="digital">
 
 <h2>Why Digital Art Matters</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-<h3>Create Faster</h3>
-<p>Experiment freely without wasting materials.</p>
+<h3>Future Skills</h3>
+<p>Digital creativity is becoming an essential skill for tomorrow's careers.</p>
+</div>
+
+<div class="card">
+<h3>Creative Freedom</h3>
+<p>Experiment without wasting materials and create faster than ever.</p>
 </div>
 
 <div class="card">
 <h3>Global Opportunities</h3>
-<p>Sell, exhibit and build your creative career worldwide.</p>
+<p>Artists can showcase work worldwide and reach international audiences.</p>
 </div>
 
 <div class="card">
-<h3>Future Skills</h3>
-<p>AI, illustration and creative technology are shaping tomorrow's art world.</p>
+<h3>AI + Art</h3>
+<p>Learn how traditional drawing and AI tools can work together.</p>
 </div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="cta">
-
-<h2>FREE Next-Gen Digital Art Webinar</h2>
-
-<p>
-Learn Digital Art live with Sourabh Bhatt and discover how artists can build
-future-ready creative skills.
-</p>
-
-<a class="btn" href="https://academy.aalokartgallery.com/services/freewebinar" target="_blank">
-Reserve My FREE Seat
-</a>
 
 </div>
 
@@ -230,64 +280,57 @@ Reserve My FREE Seat
 
 <section id="gallery">
 
-<h2>Digital Art Gallery</h2>
+<h2>Creative Gallery</h2>
 
-<div class="gallery">
+<p>Your original paintings and digital artworks will appear here.</p>
 
-<div>Artwork 1</div>
-<div>Artwork 2</div>
-<div>Artwork 3</div>
-<div>Artwork 4</div>
-<div>Artwork 5</div>
-<div>Artwork 6</div>
+<div class="grid gallery">
 
-</div>
+<img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800">
 
-<p style="margin-top:30px;color:#bbb;">
-Soon this gallery will showcase your original Digital Art, Watercolor,
-Charcoal Portraits and International Exhibition artworks.
-</p>
+<img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=800">
 
-</section>
-
-<section>
-
-<h2>Why Aalok Art Gallery?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Creative Education</h3>
-<p>Building confident artists through practical learning.</p>
-</div>
-
-<div class="card">
-<h3>Digital Innovation</h3>
-<p>Connecting traditional creativity with future technology.</p>
-</div>
-
-<div class="card">
-<h3>Artist Mentorship</h3>
-<p>Guiding students from beginner to professional level.</p>
-</div>
+<img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800">
 
 </div>
 
 </section>
 
-<section>
+<section id="success">
 
-<div class="cta">
+<h2>Achievements & Recognition</h2>
 
-<h2>Join Our Creative Community</h2>
+<div class="grid">
 
-<p>Stay connected for workshops, webinars and creative updates.</p>
+<div class="card">
+<h3>London 2024</h3>
+<p>Artwork showcased internationally.</p>
+</div>
 
-<a class="btn" href="https://wa.me/" target="_blank">
-Join WhatsApp Community
-</a>
+<div class="card">
+<h3>Brazil & Denmark</h3>
+<p>International exhibition participation.</p>
+</div>
+
+<div class="card">
+<h3>Bangkok</h3>
+<p>Art ambassador recognition.</p>
+</div>
+
+<div class="card">
+<h3>CBSE AHE</h3>
+<p>Assistant Head Examiner.</p>
+</div>
 
 </div>
+
+</section>
+
+<section class="dark">
+
+<h2>About Aalok Art Gallery</h2>
+
+<p>Aalok Art Gallery is building a bridge between traditional Fine Arts and the Next Generation Digital Art movement. The goal is to inspire students, parents and aspiring artists to confidently embrace future-ready creativity.</p>
 
 </section>
 
@@ -295,17 +338,25 @@ Join WhatsApp Community
 
 <h2>Contact</h2>
 
+<p><strong>Founder:</strong> Sourabh Bhatt</p>
+
 <p><strong>Email:</strong> aalokartgallery@gmail.com</p>
 
 <p><strong>Website:</strong> aalokartgallery.com</p>
 
-<p><strong>Founder:</strong> Sourabh Bhatt</p>
+<div class="buttons" style="margin-top:25px">
+
+<a class="btn primary" href="https://academy.aalokartgallery.com/services/freewebinar" target="_blank">Register FREE Art Class</a>
+
+<a class="btn secondary" href="https://wa.me/" target="_blank">Join WhatsApp Community</a>
+
+</div>
 
 </section>
 
 <footer>
 
-© 2026 Aalok Art Gallery • Designed for the Creative Future
+<p>© 2026 Aalok Art Gallery • Designed for the Creative Future</p>
 
 </footer>
 
