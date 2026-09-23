@@ -250,6 +250,86 @@ margin:0;
 color:#555;
 line-height:1.6;
 }
+  #artists-work{
+padding:90px 8%;
+}
+
+.artists-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:35px;
+}
+
+.artist-card{
+overflow:hidden;
+border-radius:22px;
+background:#fff;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.35s ease;
+aspect-ratio:1/1;
+}
+
+.artist-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 50px rgba(0,0,0,.15);
+}
+
+.artist-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+@media(max-width:900px){
+.artists-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.artists-grid{
+grid-template-columns:1fr;
+}
+}.artists-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+margin-top:30px;
+}
+
+.artist-card{
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+transition:.35s ease;
+aspect-ratio:1/1;
+}
+
+.artist-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 50px rgba(0,0,0,.15);
+}
+
+.artist-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+@media(max-width:900px){
+.artists-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.artists-grid{
+grid-template-columns:1fr;
+}
+}
 </style>
 
 </head>
@@ -346,7 +426,47 @@ line-height:1.6;
 
 
 </section>
+<section id="artists-work">
 
+<h2 style="text-align:center;font-size:42px;margin-bottom:10px;">
+Next-Gen Artists at Work
+</h2>
+
+<p style="text-align:center;font-size:18px;max-width:900px;margin:0 auto 45px;">
+Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
+</p>
+
+<div class="artists-grid">
+
+<div class="artist-card"><img src="Sourabh bhatt 2026.png" alt="Sourabh Bhatt Teaching"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Sculpture.png" alt="Digital Sculpture"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Student Laptop.png" alt="Student Learning"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Fish.png" alt="Digital Artwork"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Candle.png" alt="Creative Artwork"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Classroom.png" alt="Classroom Digital Art"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Portrait.png" alt="Digital Portrait"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Tablet Art.png" alt="Tablet Drawing"></div>
+
+<div class="artist-card"><img src="NEXT-GEN Creative Studio.png" alt="Creative Studio"></div>
+
+</div>
+
+<div style="text-align:center;margin-top:45px;">
+<a class="btn primary"
+href="https://academy.aalokartgallery.com/web/checkout/68e2ab173f60bdded8d979d4"
+target="_blank">
+REGISTER NOW →
+</a>
+</div>
+
+</section>
 <section class="dark" id="digital">
 
 <h2>Why Digital Art Matters</h2>
