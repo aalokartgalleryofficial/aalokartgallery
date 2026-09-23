@@ -80,6 +80,28 @@ letter-spacing:1px;
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;}
 
+  .hero-image{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:430px;
+border-radius:28px;
+border:4px solid rgba(212,175,55,.45);
+box-shadow:0 30px 80px rgba(0,0,0,.28),
+0 0 40px rgba(138,43,226,.28);
+transition:.4s ease;
+}
+
+.hero-image img:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 40px 100px rgba(0,0,0,.35),
+0 0 55px rgba(138,43,226,.4);
+}
+  
 .hero p{
 font-size:18px;
 color:#555;
@@ -269,7 +291,9 @@ line-height:1.6;
 
 </div>
 
-<img src="Sourabh bhatt 2026.png" alt="Sourabh Bhatt">
+<div class="hero-image">
+  <img src="Sourabh bhatt 2026.png" alt="Sourabh Bhatt">
+</div>
 </section>
 
 <section id="about">
