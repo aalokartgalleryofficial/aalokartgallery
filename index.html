@@ -727,5 +727,24 @@ Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
 
 </footer>
 
+  <script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".media-card img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox || e.target.classList.contains("lightbox-close")) {
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+  }
+});
+</script>
+  
 </body>
 </html>
