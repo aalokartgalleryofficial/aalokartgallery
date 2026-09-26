@@ -749,6 +749,7 @@ Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
 </footer>
 
 <script>
+<script>
 const links = document.querySelectorAll(".media-link");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -759,45 +760,48 @@ const counter = document.querySelector(".lightbox-counter");
 
 let current = 0;
 
-function showImage(index){
-  if(index < 0) index = links.length - 1;
-  if(index >= links.length) index = 0;
-
-  current = index;
+function show(i){
+  current = (i + links.length) % links.length;
   lightboxImg.src = links[current].href;
-  counter.textContent = (current + 1) + " / " + links.length;
+  counter.textContent = `${current+1} / ${links.length}`;
+  lightbox.classList.add("active");
 }
 
-links.forEach((link,index)=>{
-  link.addEventListener("click",function(e){
-    e.preventDefault();   // NEW TAB ROKEGA
-    lightbox.classList.add("active");
-    showImage(index);
+links.forEach((link,i)=>{
+  link.addEventListener("click",(e)=>{
+    e.preventDefault();
+    show(i);
   });
 });
 
-next.onclick = ()=>showImage(current+1);
-prev.onclick = ()=>showImage(current-1);
-
-close.onclick = ()=>{
-  lightbox.classList.remove("active");
-};
+prev.onclick = (e)=>{ e.stopPropagation(); show(current-1); };
+next.onclick = (e)=>{ e.stopPropagation(); show(current+1); };
+close.onclick = ()=> lightbox.classList.remove("active");
 
 lightbox.onclick = (e)=>{
-  if(e.target===lightbox){
-    lightbox.classList.remove("active");
-  }
+  if(e.target===lightbox) lightbox.classList.remove("active");
 };
 
 document.addEventListener("keydown",(e)=>{
   if(!lightbox.classList.contains("active")) return;
-
-  if(e.key==="ArrowRight") showImage(current+1);
-  if(e.key==="ArrowLeft") showImage(current-1);
+  if(e.key==="ArrowRight") show(current+1);
+  if(e.key==="ArrowLeft") show(current-1);
   if(e.key==="Escape") lightbox.classList.remove("active");
 });
 </script>
 </script>
+</script>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <span class="lightbox-prev">&#10094;</span>
+
+  <img id="lightbox-img" src="" alt="Media Coverage">
+
+  <span class="lightbox-next">&#10095;</span>
+
+  <div class="lightbox-counter"></div>
+</div>
   
 </body>
 </html>
