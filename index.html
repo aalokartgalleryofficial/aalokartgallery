@@ -748,69 +748,55 @@ Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
 
 </footer>
 
- <script>
-const images=[...document.querySelectorAll(".media-card img")];
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightbox-img");
+<script>
+const links = document.querySelectorAll(".media-link");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const prev = document.querySelector(".lightbox-prev");
+const next = document.querySelector(".lightbox-next");
+const close = document.querySelector(".lightbox-close");
+const counter = document.querySelector(".lightbox-counter");
 
-let current=0;
+let current = 0;
 
-// Create arrows and counter automatically
-const prev=document.createElement("span");
-prev.innerHTML="❮";
-prev.className="lightbox-prev";
+function showImage(index){
+  if(index < 0) index = links.length - 1;
+  if(index >= links.length) index = 0;
 
-const next=document.createElement("span");
-next.innerHTML="❯";
-next.className="lightbox-next";
-
-const counter=document.createElement("div");
-counter.className="lightbox-counter";
-
-lightbox.appendChild(prev);
-lightbox.appendChild(next);
-lightbox.appendChild(counter);
-
-function showImage(i){
-  current=(i+images.length)%images.length;
-  lightboxImg.src=images[current].src;
-  counter.textContent=`${current+1} / ${images.length}`;
+  current = index;
+  lightboxImg.src = links[current].href;
+  counter.textContent = (current + 1) + " / " + links.length;
 }
 
-images.forEach((img,i)=>{
-  img.style.cursor="zoom-in";
-
-  img.onclick=function(e){
-    e.preventDefault();
-    e.stopPropagation();
+links.forEach((link,index)=>{
+  link.addEventListener("click",function(e){
+    e.preventDefault();   // NEW TAB ROKEGA
     lightbox.classList.add("active");
-    showImage(i);
-  };
+    showImage(index);
+  });
 });
 
-prev.onclick=e=>{
-  e.stopPropagation();
-  showImage(current-1);
+next.onclick = ()=>showImage(current+1);
+prev.onclick = ()=>showImage(current-1);
+
+close.onclick = ()=>{
+  lightbox.classList.remove("active");
 };
 
-next.onclick=e=>{
-  e.stopPropagation();
-  showImage(current+1);
-};
-
-lightbox.onclick=e=>{
-  if(e.target===lightbox || e.target.classList.contains("lightbox-close")){
+lightbox.onclick = (e)=>{
+  if(e.target===lightbox){
     lightbox.classList.remove("active");
   }
 };
 
-document.addEventListener("keydown",e=>{
+document.addEventListener("keydown",(e)=>{
   if(!lightbox.classList.contains("active")) return;
 
   if(e.key==="ArrowRight") showImage(current+1);
   if(e.key==="ArrowLeft") showImage(current-1);
   if(e.key==="Escape") lightbox.classList.remove("active");
 });
+</script>
 </script>
   
 </body>
