@@ -718,7 +718,111 @@ Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
   </div>
 
 </section>
+<section style="background:#efeded;padding:80px 0;">
 
+  <div class="container">
+
+    <h2 style="text-align:center;font-size:42px;color:#ff1493;margin-bottom:15px;">
+      “Voices of Trust — From Students, Parents, and Professionals Who Witnessed the Transformation”
+    </h2>
+
+    <p style="text-align:center;font-size:18px;color:#666;max-width:850px;margin:0 auto 45px;">
+      Real experiences from students, parents, and industry professionals who discovered the power of Next-Gen Digital Art.
+    </p>
+
+    <div class="grid">
+
+      <!-- Students -->
+      <div class="card" style="padding:0;overflow:hidden;border-radius:22px;background:white;">
+        <pressable onClick={() => openVideo("https://www.youtube.com/embed/2vDHoCQ72iE")}><box gap=0>
+          <box clip radius={{topLeft:"22px",topRight:"22px"}}>
+            <AsyncImage query="We Saw Our Child Transform in Art YouTube thumbnail Sourabh Bhatt" aspectRatio="16:9" radius=none/>
+          </box>
+          <box background="#e6e6e6" padding=3 gap=2>
+            <box gap=1 align=center>
+              <title size=sm textAlign=center>Students Feedback</title>
+              <caption textAlign=center>Click Play to watch here</caption>
+            </box>
+            <row justify=between align=center>
+              <row gap=1 align=center>
+                <icon name=play-circle-filled color=danger/>
+                <text size=sm strong>Play</text>
+              </row>
+              <pressable onClick={() => GenUI.openUrl("https://www.youtube.com/watch?v=2vDHoCQ72iE&source_ve_path=OTY3MTQ&embeds_referring_euri=https%3A%2F%2Facademy.aalokartgallery.com%2F")} inline><row gap=1 align=center>
+                  <icon name=youtube color=danger/>
+                  <text size=sm strong>Watch on YouTube</text>
+                </row></pressable>
+            </row>
+          </box>
+        </box></pressable>
+      </div>
+
+      <!-- Parents -->
+      <div class="card" style="padding:0;overflow:hidden;border-radius:22px;background:white;">
+        <pressable onClick={() => openVideo("https://www.youtube.com/embed/lzasBpNL6Bg")}><box gap=0>
+          <box clip radius={{topLeft:"22px",topRight:"22px"}}>
+            <AsyncImage query="Rachit's Creative Transformation YouTube thumbnail Sourabh Bhatt" aspectRatio="16:9" radius=none/>
+          </box>
+          <box background="#e6e6e6" padding=3 gap=2>
+            <box gap=1 align=center>
+              <title size=sm textAlign=center>Parents Feedback</title>
+              <caption textAlign=center>Click Play to watch here</caption>
+            </box>
+            <row justify=between align=center>
+              <row gap=1 align=center>
+                <icon name=play-circle-filled color=danger/>
+                <text size=sm strong>Play</text>
+              </row>
+              <pressable onClick={() => GenUI.openUrl("https://www.youtube.com/watch?v=lzasBpNL6Bg")} inline><row gap=1 align=center>
+                  <icon name=youtube color=danger/>
+                  <text size=sm strong>Watch on YouTube</text>
+                </row></pressable>
+            </row>
+          </box>
+        </box></pressable>
+      </div>
+
+      <!-- Professionals -->
+      <div class="card" style="padding:0;overflow:hidden;border-radius:22px;background:white;">
+        <pressable onClick={() => openVideo("https://www.youtube.com/embed/dItBH2z2Fws")}><box gap=0>
+          <box clip radius={{topLeft:"22px",topRight:"22px"}}>
+            <AsyncImage query="Why IB Trainers Are Talking About This Digital Program YouTube thumbnail Vaibhav Sankhala" aspectRatio="16:9" radius=none/>
+          </box>
+          <box background="#e6e6e6" padding=3 gap=2>
+            <box gap=1 align=center>
+              <title size=sm textAlign=center>Professionals Feedback</title>
+              <caption textAlign=center>Click Play to watch here</caption>
+            </box>
+            <row justify=between align=center>
+              <row gap=1 align=center>
+                <icon name=play-circle-filled color=danger/>
+                <text size=sm strong>Play</text>
+              </row>
+              <pressable onClick={() => GenUI.openUrl("https://www.youtube.com/watch?v=dItBH2z2Fws")} inline><row gap=1 align=center>
+                  <icon name=youtube color=danger/>
+                  <text size=sm strong>Watch on YouTube</text>
+                </row></pressable>
+            </row>
+          </box>
+        </box></pressable>
+      </div>
+
+    </div>
+
+    <box align=center gap=3 padding={{top:5}}>
+
+      <box background="#e5e5e5" radius=full padding="16px 30px">
+        <text size=md strong>Save Your Seat Before It’s Gone!</text>
+      </box>
+
+      <button color=success>REGISTER FREE LIVE CLASS</button>
+
+    </box>
+
+  </div>
+
+</section>
+  
 <section id="gallery">
 
 <h2>Creative Gallery</h2>
@@ -859,5 +963,34 @@ document.addEventListener("keydown",(e)=>{
   if(e.key==="Escape") lightbox.classList.remove("active");
 });
 </script>  
+<!-- YouTube Video Popup -->
+<div id="videoPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:99999;align-items:center;justify-content:center;padding:20px;">
+
+  <span onclick="closeVideo()" style="position:absolute;top:25px;right:35px;font-size:42px;color:white;cursor:pointer;font-weight:bold;">&times;</span>
+
+  <div style="position:relative;width:90%;max-width:950px;aspect-ratio:16/9;">
+    <iframe id="videoFrame"
+      width="100%"
+      height="100%"
+      src=""
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="border-radius:18px;">
+    </iframe>
+  </div>
+
+</div>
+
+<script>
+function openVideo(url){
+  document.getElementById("videoPopup").style.display="flex";
+  document.getElementById("videoFrame").src=url+"?autoplay=1";
+}
+function closeVideo(){
+  document.getElementById("videoPopup").style.display="none";
+  document.getElementById("videoFrame").src="";
+}
+</script>
 </body>
 </html>
