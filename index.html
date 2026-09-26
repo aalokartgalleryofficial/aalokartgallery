@@ -138,7 +138,39 @@ color:white;
 .btn:hover{
 transform:translateY(-3px);
 }
+/* Blinking CTA Button */
+.btn-pulse{
+  background:#16a34a !important;
+  color:#fff !important;
+  padding:18px 36px;
+  border-radius:12px;
+  font-weight:700;
+  font-size:18px;
+  text-decoration:none;
+  display:inline-block;
+  animation:pulseGlow 1.2s infinite;
+  box-shadow:0 0 20px rgba(22,163,74,.45);
+}
 
+.btn-pulse:hover{
+  background:#15803d !important;
+  transform:scale(1.05);
+}
+
+@keyframes pulseGlow{
+  0%{
+    transform:scale(1);
+    box-shadow:0 0 10px rgba(22,163,74,.35);
+  }
+  50%{
+    transform:scale(1.08);
+    box-shadow:0 0 35px rgba(22,163,74,.9);
+  }
+  100%{
+    transform:scale(1);
+    box-shadow:0 0 10px rgba(22,163,74,.35);
+  }
+}
 .hero img{
 width:100%;
 border-radius:22px;
@@ -633,31 +665,58 @@ Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
   
 <section class="dark" id="digital">
 
-<h2>Why Digital Art Matters</h2>
+  <div class="container">
 
-<div class="grid">
+    <h2 style="text-align:center;font-size:42px;margin-bottom:12px;">
+      Why Next-Gen Digital Art Changes Everything
+    </h2>
 
-<div class="card">
-<h3>Future Skills</h3>
-<p>Digital creativity is becoming an essential skill for tomorrow's careers.</p>
-</div>
+    <p style="text-align:center;font-size:18px;max-width:900px;margin:0 auto 35px;">
+      Your creativity deserves future-ready skills. Digital Art is no longer just about drawing on a screen—it's becoming a powerful creative skill used in design, animation, gaming, content creation, advertising, education, and AI-driven visual storytelling.
+    </p>
 
-<div class="card">
-<h3>Creative Freedom</h3>
-<p>Experiment without wasting materials and create faster than ever.</p>
-</div>
+    <div class="grid">
 
-<div class="card">
-<h3>Global Opportunities</h3>
-<p>Artists can showcase work worldwide and reach international audiences.</p>
-</div>
+      <div class="card">
+        <h3>✨ Unlimited Creativity</h3>
+        <p>Experiment freely with colors, brushes, textures, and effects without wasting paper or materials.</p>
+      </div>
 
-<div class="card">
-<h3>AI + Art</h3>
-<p>Learn how traditional drawing and AI tools can work together.</p>
-</div>
+      <div class="card">
+        <h3>🤖 AI as Your Creative Partner</h3>
+        <p>Modern AI tools help generate ideas, speed up creative workflows, and help turn imagination into reality faster than ever.</p>
+      </div>
 
-</div>
+      <div class="card">
+        <h3>🌍 Future Creative Opportunities</h3>
+        <p>Digital Art is becoming valuable across animation, gaming, branding, social media, education, advertising, and visual communication.</p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Creative Confidence</h3>
+        <p>Create faster, think bigger, and express your ideas confidently in today's digital world.</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+
+      <p style="font-size:18px;font-weight:700;margin-bottom:8px;">
+        Live Online • Beginner Friendly • Limited Seats
+      </p>
+
+      <p style="font-size:15px;margin-bottom:22px;color:#d9d9d9;">
+        Registration closes once the remaining seats are filled.
+      </p>
+
+      <a href="https://academy.aalokartgallery.com/services/freewebinar"
+         class="btn primary btn-pulse">
+         REGISTER FREE LIVE CLASS
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
