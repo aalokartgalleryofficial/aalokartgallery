@@ -390,6 +390,32 @@ display:block;
   box-shadow:0 15px 40px rgba(0,0,0,.5);
 }
 
+  .lightbox-prev,
+.lightbox-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:52px;
+  color:#fff;
+  cursor:pointer;
+  user-select:none;
+  padding:10px;
+}
+
+.lightbox-prev{ left:25px; }
+.lightbox-next{ right:25px; }
+
+.lightbox-counter{
+  position:absolute;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#fff;
+  font-size:18px;
+  background:rgba(0,0,0,.45);
+  padding:8px 16px;
+  border-radius:999px;
+}
 .lightbox-close{
   position:absolute;
   top:18px;
@@ -727,22 +753,64 @@ Learn the Most Powerful & Next-Gen Way to Become a Confident Digital Artist
 
 </footer>
 
-  <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+ <script>
+const images=[...document.querySelectorAll(".media-card img")];
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
 
-document.querySelectorAll(".media-card img").forEach(img => {
-  img.addEventListener("click", () => {
+let current=0;
+
+// Create arrows and counter automatically
+const prev=document.createElement("span");
+prev.innerHTML="❮";
+prev.className="lightbox-prev";
+
+const next=document.createElement("span");
+next.innerHTML="❯";
+next.className="lightbox-next";
+
+const counter=document.createElement("div");
+counter.className="lightbox-counter";
+
+lightbox.appendChild(prev);
+lightbox.appendChild(next);
+lightbox.appendChild(counter);
+
+function showImage(i){
+  current=(i+images.length)%images.length;
+  lightboxImg.src=images[current].src;
+  counter.textContent=`${current+1} / ${images.length}`;
+}
+
+images.forEach((img,i)=>{
+  img.onclick=()=>{
     lightbox.classList.add("active");
-    lightboxImg.src = img.src;
-  });
+    showImage(i);
+  };
 });
 
-lightbox.addEventListener("click", e => {
-  if (e.target === lightbox || e.target.classList.contains("lightbox-close")) {
+prev.onclick=e=>{
+  e.stopPropagation();
+  showImage(current-1);
+};
+
+next.onclick=e=>{
+  e.stopPropagation();
+  showImage(current+1);
+};
+
+lightbox.onclick=e=>{
+  if(e.target===lightbox || e.target.classList.contains("lightbox-close")){
     lightbox.classList.remove("active");
-    lightboxImg.src = "";
   }
+};
+
+document.addEventListener("keydown",e=>{
+  if(!lightbox.classList.contains("active")) return;
+
+  if(e.key==="ArrowRight") showImage(current+1);
+  if(e.key==="ArrowLeft") showImage(current-1);
+  if(e.key==="Escape") lightbox.classList.remove("active");
 });
 </script>
   
