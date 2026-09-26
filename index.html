@@ -347,20 +347,19 @@ display:block;
 }
 
 .media-card{
-  overflow:hidden;
   border-radius:16px;
   background:#fff;
   box-shadow:0 10px 25px rgba(0,0,0,.12);
   transition:.3s;
-}
-
-.media-card:hover{
-  transform:translateY(-6px);
+  overflow:hidden;
 }
 
 .media-card img{
   width:100%;
+  height:auto;
   display:block;
+  object-fit:contain;
+  cursor:zoom-in;
 }
  /* Media Coverage Lightbox */
 
@@ -783,10 +782,12 @@ function showImage(i){
 }
 
 images.forEach((img,i)=>{
-  img.onclick=()=>{
+  img.addEventListener("click",function(e){
+    e.preventDefault();
+    e.stopPropagation();
     lightbox.classList.add("active");
     showImage(i);
-  };
+  });
 });
 
 prev.onclick=e=>{
