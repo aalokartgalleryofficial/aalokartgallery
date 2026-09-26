@@ -782,12 +782,14 @@ function showImage(i){
 }
 
 images.forEach((img,i)=>{
-  img.addEventListener("click",function(e){
+  img.style.cursor="zoom-in";
+
+  img.onclick=function(e){
     e.preventDefault();
     e.stopPropagation();
     lightbox.classList.add("active");
     showImage(i);
-  });
+  };
 });
 
 prev.onclick=e=>{
