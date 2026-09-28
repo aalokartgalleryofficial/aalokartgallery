@@ -5,15 +5,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Aalok Art Gallery</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#ede8df;
+  color:#111;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:#ede8df;
+  border-bottom:1px solid #ddd;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  height:40px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#111;
+  margin-left:25px;
+  font-weight:500;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:70px 30px;
+}
+
+.about-top{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:60px;
+  align-items:center;
+}
+
+.about-top img{
+  width:100%;
+  border-radius:22px;
+}
+
+h1{
+  font-size:52px;
+  margin-bottom:20px;
+}
+
+.highlight{
+  color:#6d3df7;
+}
+
+.register-btn{
+  display:inline-block;
+  margin-top:30px;
+  background:#2EE64D;
+  color:white;
+  text-decoration:none;
+  padding:18px 34px;
+  border-radius:14px;
+  font-weight:bold;
+}
+
+.timeline{
+  margin-top:70px;
+}
+
+.timeline-card{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  margin-bottom:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+footer{
+  background:#000;
+  color:white;
+  text-align:center;
+  padding:45px 20px;
+  margin-top:70px;
+}
+</style>
 </head>
 
 <body>
 
-<h1>About Sourabh Bhatt</h1>
+<header>
 
-<p>Indian Artist • Next-Gen Digital Art Mentor • Founder & Director, Aalok Art Gallery.</p>
+<div class="logo">
+<img src="FINAL LOGO with NO Background png.png" alt="Logo">
+<span><b>AALOK ART GALLERY</b></span>
+</div>
 
-<p>This page will contain the complete About section.</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="index.html#digital">Digital Art</a>
+<a href="gallery.html">Gallery</a>
+<a href="recognition.html">Success</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="about-top">
+
+<div>
+
+<h1>About <span class="highlight">Sourabh Bhatt</span></h1>
+
+<p><b>Indian Artist | Next-Gen Digital Art Mentor | Founder & Director, Aalok Art Gallery.</b></p>
+
+<p>
+25+ years of artistic journey, 18+ years of Fine Arts teaching,
+8+ years of IBDP Visual Arts, IGCSE Art & Design and Cambridge Checkpoint.
+</p>
+
+<p>
+This page will become your complete artistic story, international journey,
+awards, exhibitions and professional timeline.
+</p>
+
+<a class="register-btn" href="#">REGISTER FREE LIVE CLASS</a>
+
+</div>
+
+<div>
+<img src="Sourabh bhatt 2026.png" alt="Sourabh Bhatt">
+</div>
+
+</div>
+
+<div class="timeline">
+
+<h2>Artistic Journey</h2>
+
+<div class="timeline-card">
+<b>2004 – Bangkok Exhibition</b>
+<p>International artistic journey begins.</p>
+</div>
+
+<div class="timeline-card">
+<b>2004 – London Exhibition</b>
+<p>Artwork showcased internationally.</p>
+</div>
+
+<div class="timeline-card">
+<b>2006 – Jaipur Solo Exhibition</b>
+<p>First major solo exhibition at Jawahar Kala Kendra.</p>
+</div>
+
+<div class="timeline-card">
+<b>Present</b>
+<p>Next-Gen Digital Art Mentor and Founder of Aalok Art Gallery.</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<a class="register-btn" href="#">REGISTER FREE LIVE CLASS</a>
+
+<p style="margin-top:25px;">© 2013–2026 Aalok Art Gallery</p>
+
+</footer>
 
 </body>
 </html>
