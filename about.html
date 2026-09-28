@@ -1,17 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Aalok Art Gallery</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#ece7df;
+color:#111;
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 8%;
+background:#ece7df;
+border-bottom:1px solid #d6c9b8;
+position:sticky;
+top:0;
+}
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+font-size:28px;
+}
+.logo img{height:48px;}
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#222;
+font-weight:600;
+}
+.hero{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:40px;
+padding:70px 8%;
+align-items:center;
+}
+.hero img{
+width:100%;
+border-radius:22px;
+}
+.hero h1{
+font-size:56px;
+line-height:1.1;
+margin-bottom:20px;
+}
+.hero span{
+background:linear-gradient(90deg,#00b4ff,#8b3dff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:20px 8% 60px;
+}
+.card{
+background:#fff;
+padding:28px;
+border-radius:22px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+.section{
+padding:70px 8%;
+}
+.section h2{
+font-size:40px;
+margin-bottom:20px;
+}
+.cta{
+text-align:center;
+padding:70px 8%;
+}
+.btn{
+display:inline-block;
+background:#2fe44a;
+padding:18px 36px;
+border-radius:16px;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+font-size:20px;
+}
+footer{
+background:#000;
+color:#fff;
+text-align:center;
+padding:28px;
+margin-top:40px;
+}
+@media(max-width:768px){
+.hero{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:40px;
+}
+}
+</style>
 </head>
+
 <body>
 
-<h1>About Sourabh Bhatt</h1>
+<header>
+<div class="logo">
+<img src="FINAL LOGO with NO Background png.png" alt="">
+<span>AALOK ART GALLERY</span>
+</div>
 
-<p>Indian Artist • Next-Gen Digital Art Mentor • Founder & Director, Aalok Art Gallery.</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="success.html">Success</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
-<p>This page will later include the complete About section with exhibitions, achievements, media coverage, teaching journey, and artistic philosophy.</p>
+<section class="hero">
+
+<div>
+<h1>About <span>Sourabh Bhatt</span></h1>
+
+<p>25+ Years Artistic Career • 18+ Years Fine Arts Educator • IBDP Visual Arts • IGCSE Art & Design • Cambridge Checkpoint • Next-Gen Digital Art Mentor • Founder & Director, Aalok Art Gallery.</p>
+
+<p>From traditional Fine Arts to future-ready Digital Art, the mission is to help artists build confidence, portfolios, and global opportunities.</p>
+
+<a href="#" class="btn">REGISTER FREE LIVE CLASS</a>
+</div>
+
+<div>
+<img src="Sourabh bhatt 2026.png" alt="">
+</div>
+
+</section>
+
+<section class="section">
+<h2>Professional Highlights</h2>
+</section>
+
+<section class="stats">
+
+<div class="card">
+<h3>25+ Years Artistic Career</h3>
+<p>Creative practice across Fine Arts and exhibitions.</p>
+</div>
+
+<div class="card">
+<h3>18+ Years Teaching</h3>
+<p>Fine Arts education since 2008.</p>
+</div>
+
+<div class="card">
+<h3>International Educator</h3>
+<p>IBDP, IGCSE & Cambridge programmes.</p>
+</div>
+
+<div class="card">
+<h3>100+ Exhibitions</h3>
+<p>London, Brazil, Denmark, Thailand and India.</p>
+</div>
+
+<div class="card">
+<h3>Next-Gen Mentor</h3>
+<p>Helping artists blend traditional and AI-powered creativity.</p>
+</div>
+
+</section>
+
+<section class="section">
+<h2>My Journey</h2>
+<p>Timeline section will be added with London 2004, Bangkok, Brazil, Denmark, Bhutan, Himalaya and teaching journey.</p>
+</section>
+
+<section class="section">
+<h2>Media Coverage</h2>
+<p>Newspaper and television coverage gallery will come here.</p>
+</section>
+
+<section class="cta">
+<a href="#" class="btn">REGISTER FREE LIVE CLASS</a>
+</section>
+
+<footer>
+Copyright © 2013–2026 Aalok Art Gallery
+</footer>
 
 </body>
 </html>
